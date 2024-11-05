@@ -204,7 +204,7 @@ cron.schedule('0 0 * * *', () => {
 });
 
 
-const { setBotClient } = require('./api');
-setBotClient(client);  
+//const { setBotClient } = require('./api');
+//setBotClient(client);  
 
 module.exports = client;
