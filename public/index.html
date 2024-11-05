@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bot Control Panel</title>
+    <title>Aries Panel</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -127,7 +127,7 @@
 
         async function fetchBotStats() {
             try {
-                const response = await axios.get('http://localhost:3000/api/bot/stats');
+                const response = await axios.get('https://aries-mwjm.onrender.com/api/bot/stats');
                 const data = response.data;
 
                 document.getElementById('bot-avatar').src = data.avatar;
@@ -144,7 +144,7 @@
 
         async function fetchCommandSettings() {
             try {
-                const response = await axios.get('http://localhost:3000/api/bot/commands');
+                const response = await axios.get('https://aries-mwjm.onrender.com/api/bot/commands');
                 const settings = response.data;
 
                 const commandSettingsDiv = document.getElementById('command-settings');
@@ -242,29 +242,29 @@
             try {
                 switch (currentModalAction) {
                     case 'activity':
-                        await axios.post('http://localhost:3000/api/bot/presence', { activity: { name: input1, type: input2 } });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/presence', { activity: { name: input1, type: input2 } });
                         break;
                     case 'status':
-                        await axios.post('http://localhost:3000/api/bot/presence', { status: input1 });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/presence', { status: input1 });
                         break;
                     case 'message':
-                        await axios.post('http://localhost:3000/api/bot/send-message', { channelId: input1, message: input2 });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/send-message', { channelId: input1, message: input2 });
                         break;
                     case 'avatar':
-                        await axios.post('http://localhost:3000/api/bot/avatar', { avatarUrl: input1 });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/avatar', { avatarUrl: input1 });
                         break;
                     case 'banner':
-                        await axios.post('http://localhost:3000/api/bot/banner', { bannerUrl: input1 });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/banner', { bannerUrl: input1 });
                         break;
                     case 'kick':
-                        await axios.post('http://localhost:3000/api/bot/kick-user', { guildId: input1, userId: input2 });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/kick-user', { guildId: input1, userId: input2 });
                         break;
                     case 'timeout':
                         const [userId, duration] = input2.split(' ');
-                        await axios.post('http://localhost:3000/api/bot/timeout-user', { guildId: input1, userId, duration: parseInt(duration) });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/timeout-user', { guildId: input1, userId, duration: parseInt(duration) });
                         break;
                     case 'ban':
-                        await axios.post('http://localhost:3000/api/bot/ban-user', { guildId: input1, userId: input2 });
+                        await axios.post('https://aries-mwjm.onrender.com/api/bot/ban-user', { guildId: input1, userId: input2 });
                         break;
                 }
                 alert('Action completed!');
@@ -279,7 +279,7 @@
 
         async function toggleCommand(command, enabled) {
             try {
-                await axios.post('http://localhost:3000/api/bot/commands', { command, enabled });
+                await axios.post('https://aries-mwjm.onrender.com/api/bot/commands', { command, enabled });
                 alert(`Command ${command} has been ${enabled ? 'enabled' : 'disabled'}`);
             } catch (error) {
                 console.error(`Error toggling command ${command}:`, error);
