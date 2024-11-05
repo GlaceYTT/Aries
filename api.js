@@ -159,8 +159,8 @@ app.post('/api/bot/commands', (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`API server is running on port ${port}`);
-});
+//app.listen(port, () => {
+    //console.log(`API server is running on port ${port}`);
+//});
 
 module.exports = { app, setBotClient };
