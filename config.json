@@ -1,0 +1,15 @@
+{
+    "mongodbUri": "mongodb+srv://shiva:shiva@musicbotyt.ouljywv.mongodb.net/?retryWrites=true&w=majority",
+    "prefix": "!",
+    "commandSettings": {
+        "administrator": true,
+        "application": true,
+        "birthday": true,
+        "economy": true,
+        "everyone": true,
+        "fortnite": true,
+        "minimod": true,
+        "mod": true,
+        "other": true
+    }
+}
