@@ -5,7 +5,7 @@ const axios = require('axios');
 const { ActivityType } = require('discord.js');
 const { getCommandSettings, updateCommandSettings } = require('./config');  // Import from config.js
 const app = express();
-const port = process.env.PORT || 3000;
+//const port = process.env.PORT || 3000;
 
 let botClient;
 
